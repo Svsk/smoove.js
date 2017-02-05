@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>smoove.js demo</title>
+</head>
+<link rel="stylesheet" type="text/css" href="demo.css" />
+<body>
+    <div class="container">
+        <div class="filter-controls">
+            <div>
+                <label>Above 10 kb:</label>
+                <input data-category="above-10kb" type="checkbox" />
+            </div>
+
+            <div>
+                <label>Above 100kb:</label>
+                <input data-category="above-100kb" type="checkbox" />
+            </div>
+
+            <div>
+                <label>Above 200kb:</label>
+                <input data-category="above-200kb" type="checkbox" />
+            </div>
+
+            <div>
+                <label>Pintrest:</label>
+                <input data-category="pintrest" type="checkbox" />
+            </div>
+
+            <div>
+                <label>Twitter:</label>
+                <input data-category="twitter" type="checkbox" />
+            </div>
+        </div>
+
+        <ul data-smoove-container>
+            <li data-categories="above-10kb;twitter">
+                <div><img src="demo-twi.png" /></div>
+                <div>This is a small element</div>
+                <div>10 kb</div>
+            </li>
+            <li data-categories="above-10kb;pintrest">
+                <div><img src="demo-pin.png" /></div>
+                <div>This is a slightly bigger element</div>
+                <div>50 kb</div>
+            </li>
+            <li data-categories="above-10kb;above-100kb;twitter">
+                <div><img src="demo-twi.png" /></div>
+                <div>This is a big element</div>
+                <div>100 kb</div>
+            </li>
+            <li data-categories="above-200kb;above-100kb;above-10kb;pintrest">
+                <div><img src="demo-pin.png" /></div>
+                <div>This is the biggest element</div>
+                <div>200 kb</div>
+            </li>
+            <li data-categories="above-200kb;above-100kb;above-10kb;twitter">
+                <div><img src="demo-twi.png" /></div>
+                <div>This is the biggest element</div>
+                <div>300 kb</div>
+            </li>
+            <li data-categories="above-200kb;above-100kb;above-10kb;pintrest">
+                <div><img src="demo-pin.png" /></div>
+                <div>This is the biggest element</div>
+                <div>400 kb</div>
+            </li>
+            <li data-categories="above-200kb;above-100kb;above-10kb;twitter">
+                <div><img src="demo-twi.png" /></div>
+                <div>This is the biggest element</div>
+                <div>500 kb</div>
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="smoove.min.js"></script>
+
+    <script>
+            $(function () {
+                $("[data-smoove-container]").smoove({
+                    filterControllerSelector: "[data-category]",
+                    filterControllerCategoryAttribute: "data-category",
+                    itemCategoryAttribute: "data-categories",
+                    mode: "multifilter"
+                });
+            });
+    </script>
+</body>
+</html>

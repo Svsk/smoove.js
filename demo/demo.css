@@ -1,0 +1,46 @@
+.container {
+    display: table;
+    margin: 0 auto;
+    width: 60%;
+    border: 1px solid lightgray;
+    padding: 20px;
+}
+
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+li {
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    border: 1px solid lightgray;
+}
+
+
+.filter-controls > div {
+    display: inline-block;
+    padding: 10px;
+    border-right: 1px solid lightgray;
+}
+
+/*
+ul {
+    list-style: none;
+    vertical-align: top;
+}
+
+li {
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    display: inline-block;
+    float: left;
+    min-height: 200px;
+
+    border: 1px solid lightgray;
+}
+*/
