@@ -25,9 +25,11 @@ ul.flex {
 ul.flex > li {
     padding: 15px;
     margin: 10px;
+    width: 31%;
+    
     text-align: center;
     border: 1px solid lightgray;
-    width: 31%;
+    background-color: white;
 }
 
 ul.inline {
@@ -44,4 +46,5 @@ ul.inline > li {
     margin: 10px;
     text-align: center;
     border: 1px solid lightgray;
+    background-color: white;
 }
