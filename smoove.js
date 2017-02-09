@@ -57,10 +57,10 @@ jQuery.fn.extend({
                         clone.animate({ 
                             top: positions.top,
                             left: positions.left
-                        }).promise().done(function () {
+                        }, { queue: false }).promise().done(function () {
                             $(this).data("original").css("visibility", "visible");
                             $(this).remove();
-                            $itemsToShowHidden.animate({"opacity": "1"});
+                            $itemsToShowHidden.animate({"opacity": "1"}, { queue: false });
 
                             animatesFinished++;
                             if (animatesFinished === clones.length && typeof callback === "function") {
