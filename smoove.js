@@ -4,9 +4,17 @@ jQuery.fn.extend({
         var $filterController = $(filterControllerSelector);
         
         var $container = $(this);
-        options.element = $container;        
+        var isFiltering = false;
+        options.element = $container;
 
-        $filterController.on("click", function () {
+        $filterController.on("click", function (e) {
+            if (isFiltering) {
+                e.stopPropagation();
+                return false;
+            }
+            
+            isFiltering = true;
+
             $hits = [];
 
             if (options.mode === "multifilter") {
@@ -66,6 +74,7 @@ jQuery.fn.extend({
 
                             animatesFinished++;
                             if (animatesFinished === clones.length && typeof callback === "function") {
+                                isFiltering = false;
                                 callback(options);
                             }
                         });

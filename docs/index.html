@@ -159,22 +159,21 @@
     <script src="smoove.min.js"></script>
 
     <script>
-            $(function () {
-                $("[data-smoove-container]").smoove({
-                    filterControllerCategoryAttribute: "data-category",
-                    itemCategoryAttribute: "data-categories",
-                    mode: "multifilter"
-                }, function (e) { console.log("Finished filtering"); });
-            });
+        $(function () {
+            $("[data-smoove-container]").smoove({
+                filterControllerCategoryAttribute: "data-category",
+                itemCategoryAttribute: "data-categories",
+                mode: "multifilter"
+            }, function (e) { console.log("Finished filtering"); });
+        });
 
-
-            $(function () {
-                $("[data-smoove-container-inline]").smoove({
-                    filterControllerCategoryAttribute: "data-category-inline",
-                    itemCategoryAttribute: "data-categories",
-                    mode: "multifilter"
-                }, function (e) { console.log("Finished filtering"); });
-            });
+        $(function () {
+            $("[data-smoove-container-inline]").smoove({
+                filterControllerCategoryAttribute: "data-category-inline",
+                itemCategoryAttribute: "data-categories",
+                mode: "multifilter"
+            }, function (e) { console.log("Finished filtering"); });
+        });
     </script>
 </body>
 </html>
