@@ -1,14 +1,16 @@
 jQuery.fn.extend({
     smoove: function (options, callback) {
-        var $filterController = $(options.filterControllerSelector);
+        var filterControllerSelector = "["+options.filterControllerCategoryAttribute+"]";
+        var $filterController = $(filterControllerSelector);
+        
         var $container = $(this);
-        options.element = $container;
+        options.element = $container;        
 
         $filterController.on("click", function () {
             $hits = [];
 
             if (options.mode === "multifilter") {
-                var checkedFilters = $(options.filterControllerSelector + ":checked");
+                var checkedFilters = $(filterControllerSelector + ":checked");
 
                 if (checkedFilters.length === 0) {
                     checkedFilters = "ALL";
