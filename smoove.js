@@ -73,9 +73,12 @@ jQuery.fn.extend({
                             $itemsToShowHidden.animate({"opacity": "1"}, { queue: false });
 
                             animatesFinished++;
-                            if (animatesFinished === clones.length && typeof callback === "function") {
+                            if (animatesFinished === clones.length) {
                                 isFiltering = false;
-                                callback(options);
+                                
+                                if (typeof callback === "function") {
+                                    callback(options);
+                                }
                             }
                         });
                     }
